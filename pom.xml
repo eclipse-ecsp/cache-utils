@@ -35,7 +35,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.jupiter.version>5.1.0</junit.jupiter.version>
         <junit.version>4.13.2</junit.version>
-        <transformers.version>1.0-SNAPSHO</transformers.version>
+        <transformers.version>1.0-SNAPSHOT</transformers.version>
         <maven.surefire.version>2.18.1</maven.surefire.version>
         <docker.java.version>3.3.6</docker.java.version>
         <testcontainers.version>1.17.6</testcontainers.version>

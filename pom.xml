@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.harman.ignite.platform</groupId>
-    <artifactId>ignite-cache</artifactId>
-    <version>3.0.3</version>
-    <name>Ignite Cache</name>
-    <description>Cache framework for Ignite</description>
+    <groupId>com.eclipse.ecsp</groupId>
+    <artifactId>cache-utils</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Cache Utils</name>
+    <description>Cache framework for Redis</description>
     <url>http://maven.apache.org</url>
 
     <scm>
-        <connection>scm:git:https://github.com/HARMAN-Automotive/redis-cache.git</connection>
-        <url>https://github.com/HARMAN-Automotive/redis-cache</url>
+        <connection>scm:git:https://github.com/eclipse-ecsp/cache-utils.git</connection>
+        <url>https://github.com/eclipse-ecsp/cache-utils</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -23,20 +23,19 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/HARMAN-Automotive/redis-cache/issues</url>
+        <url>https://github.com/eclipse-ecsp/cache-utils/issues</url>
     </issueManagement>
 
     <organization>
-        <url>https://github.com/HARMAN-Automotive</url>
-        <name>HARMAN Automotive</name>
+        <url>https://github.com/eclipse-ecsp</url>
+        <name>eclipse-ecsp</name>
     </organization>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.jupiter.version>5.1.0</junit.jupiter.version>
         <junit.version>4.13.2</junit.version>
-        <ignite.utils.version>3.0.3</ignite.utils.version>
-        <ignite.transformers.version>3.0.3</ignite.transformers.version>
+        <transformers.version>1.0-SNAPSHO</transformers.version>
         <maven.surefire.version>2.18.1</maven.surefire.version>
         <docker.java.version>3.3.6</docker.java.version>
         <testcontainers.version>1.17.6</testcontainers.version>
@@ -66,14 +65,14 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/harman-automotive/csp-central-repo</url>
+            <url>https://maven.pkg.github.com/eclipse-ecsp/cache-utils</url>
         </repository>
     </distributionManagement>
 
     <repositories>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/harman-automotive/csp-central-repo</url>
+            <url>https://maven.pkg.github.com/eclipse-ecsp/transformers</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -81,28 +80,13 @@
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>com.harman.ignite</groupId>
-            <artifactId>ignite-utils</artifactId>
-            <version>${ignite.utils.version}</version>
-        </dependency>
         <!-- RTC-156940 - Added the transformer dependency so that the ObjectMapper 
             is available while loading the custom IgniteJsonJacksonCodec during Redis 
             connection creation. -->
         <dependency>
-            <groupId>com.harman.ignite</groupId>
-            <artifactId>ignite-transformers</artifactId>
-            <version>${ignite.transformers.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.harman.ignite</groupId>
-                    <artifactId>ignite-entities</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.harman.ignite</groupId>
-                    <artifactId>ignite-utils</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>com.eclipse.ecsp</groupId>
+            <artifactId>transformers</artifactId>
+            <version>${transformers.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>

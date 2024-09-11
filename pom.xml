@@ -71,7 +71,7 @@
 
    <repositories>
          <repository>
-                  <id>github</id>
+                  <id>github-1</id>
                   <url>https://maven.pkg.github.com/eclipse-ecsp/transformers</url>
                   <snapshots>
                            <enabled>true</enabled>

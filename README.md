@@ -21,7 +21,7 @@ Following are the supported Redis connection configurations:
 
 <b>Each object has a `mutationId` which is meant to be returned in asynchronous operations</b>
 
-> **_NOTE:_** Support for pipelined batch executions are provided through the .*Async() methods. Clients of `redis-cache` are encouraged to use Async methods to improve throughput. For typical store and forget or store and retrieve slightly later use cases, Async methods will bring about quite a bit of throughput improvement.
+> **_NOTE:_** Support for pipelined batch executions are provided through the .*Async() methods. Clients of `cache-utils` are encouraged to use Async methods to improve throughput. For typical store and forget or store and retrieve slightly later use cases, Async methods will bring about quite a bit of throughput improvement.
 
 # Table of Contents
 * [Getting Started](#getting-started)

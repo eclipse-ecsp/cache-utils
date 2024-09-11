@@ -71,8 +71,15 @@
 
     <repositories>
         <repository>
-            <id>github</id>
+            <id>github-transformers</id>
             <url>https://maven.pkg.github.com/eclipse-ecsp/transformers</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>github-redis-jar</id>
+            <url>https://maven.pkg.github.com/eclipse-ecsp/redis-jar</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>

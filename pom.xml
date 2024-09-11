@@ -69,22 +69,27 @@
         </repository>
     </distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>github-transformers</id>
-            <url>https://maven.pkg.github.com/eclipse-ecsp/transformers</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>github-redis-jar</id>
-            <url>https://maven.pkg.github.com/eclipse-ecsp/redis-jar</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <profiles>
+             <profile>
+               <id>github</id>
+               <repositories>
+                 <repository>
+                   <id>github-transformers</id>
+                   <url>https://maven.pkg.github.com/eclipse-ecsp/transformers</url>
+                   <snapshots>
+                     <enabled>true</enabled>
+                   </snapshots>
+                 </repository>
+                 <repository>
+                   <id>github-redis-jar</id>
+                   <url>https://maven.pkg.github.com/eclipse-ecsp/redis-jar</url>
+                   <snapshots>
+                     <enabled>true</enabled>
+                   </snapshots>
+                 </repository>
+               </repositories>
+             </profile>
+    </profiles>                  
 
     <dependencies>
         <!-- RTC-156940 - Added the transformer dependency so that the ObjectMapper 

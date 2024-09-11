@@ -1,0 +1,16 @@
+local cur = ARGV[1]
+local count = ARGV[2]
+local pattern = ARGV[3]
+local rep = {}
+local tmp
+
+  tmp = redis.call("SCAN", cur, "MATCH", pattern, "COUNT", count)
+  cur = tonumber(tmp[1])
+  rep[#rep+1]=cur
+  if tmp[2] then
+    for k, v in pairs(tmp[2]) do
+        rep[#rep+1] = v
+        rep[#rep+1] = redis.call('MGET', v)[1]
+    end
+  end
+return rep

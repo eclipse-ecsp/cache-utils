@@ -28,11 +28,11 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Maven
-      run: mvn -Dmaven.test.failure.ignore=true -P github -B package --file pom.xml -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn -Dmaven.test.failure.ignore=true -B package --file pom.xml -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn -P github -DskipTests=true deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn -DskipTests=true deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
